@@ -2,12 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/mnxMoneda" android:title="Monedas" />
-    <item android:id="@+id/mnxLongitud" android:title="Longitud" />
-    <item android:id="@+id/mnxMasa" android:title="Masa" />
-    <item android:id="@+id/mnxAlmacenamiento" android:title="Almacenamineto" />
-    <item android:id="@+id/mnxTiempo" android:title="Tiempo" />
-    <item android:id="@+id/mnxTemperatura" android:title="Temperatura" />
-    <item android:id="@+id/mnxVolumen" android:title="Volumen" />
-    <item android:id="@+id/mnxArea" android:title="Area" />
+    <item android:id="@+id/mnxConversor" android:title="Conversor" />
+    <item android:id="@+id/mnxCuota" android:title="Cuota" />
+
 </menu>
