@@ -39,12 +39,27 @@
                         android:layout_marginLeft="30dp"
                         android:textSize="35dp"/>
 
+                    <TextView
+                        android:id ="@+id/lblIndicacion"
+                        android:layout_marginTop="20dp"
+                        android:text="Ingrese sus Metros Consumidos:"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:textStyle="italic"
+                        android:layout_below="@id/lblTitulo">
+
+                    </TextView>
+
+
+
                     <EditText
                         android:id="@+id/txtcant"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/lblTitulo"
+                        android:layout_below="@+id/lblIndicacion"
                         android:layout_marginTop="10dp"
+                        android:inputType="number"
                         android:hint="Cantidad" />
                     <TextView
                         android:id="@+id/lblResultado"
@@ -52,6 +67,9 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/txtcant"
                         android:layout_marginTop="10dp"
+                        android:textSize="25dp"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
                         android:text="Respuesta: ?" />
                     <Button
                         android:id="@+id/btnPrecio"
