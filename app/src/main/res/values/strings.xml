@@ -1,12 +1,4 @@
 <resources>
-    <string name="app_name">Mi Primer Calculadora</string>
-    <string-array name="conversorArea">
-        <item>Metros Cuadrados</item>
-        <item>Pies Cuadrados</item>
-        <item>Varas Cuadradas</item>
-        <item>Yardas Cuadradas</item>
-        <item>Tareas</item>
-        <item>Manzanas</item>
-        <item>Hectáreas</item>
-    </string-array>
+    <string name="app_name">Kiki Store</string>
+
 </resources>
