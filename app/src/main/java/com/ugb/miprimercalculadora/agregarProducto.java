@@ -24,9 +24,9 @@ import java.util.Date;
 
 public class agregarProducto extends AppCompatActivity {
     FloatingActionButton btnAtras;
-    ImageView imgFotoProducto;
+    ImageView imgFotoAuto;
     Intent tomarFotoIntent;
-    String urlPhoto, idProdcuto, accion="nuevo";
+    String urlPhoto, idAuto, accion="nuevo";
     Button btn;
     DB miDB;
     TextView tempVal;
@@ -45,12 +45,12 @@ public class agregarProducto extends AppCompatActivity {
             mostrarVistaPrincipal();
         });
 
-        imgFotoProducto = findViewById(R.id.imgFotoProducto);
-        imgFotoProducto.setOnClickListener(v -> {
+        imgFotoAuto = findViewById(R.id.imgFotoAuto);
+        imgFotoAuto.setOnClickListener(v -> {
             tomarFotoProducto();
         });
 
-        btn = findViewById(R.id.btnGuardarProducto);
+        btn = findViewById(R.id.btnGuardarAuto);
         btn.setOnClickListener(v->{
             agregarProducto();
         });
@@ -60,29 +60,26 @@ public class agregarProducto extends AppCompatActivity {
     private void agregarProducto () {
 
 
-            tempVal = findViewById(R.id.txtCodigo);
-            String codigo = tempVal.getText().toString();
+        tempVal = findViewById(R.id.txtMarca);
+        String marca = tempVal.getText().toString();
 
-            tempVal = findViewById(R.id.txtNombreProducto);
-            String producto = tempVal.getText().toString();
+        tempVal = findViewById(R.id.txtNombreModelo);
+        String modelo = tempVal.getText().toString();
 
-            tempVal = findViewById(R.id.txtMarca);
-            String marca = tempVal.getText().toString();
+        tempVal = findViewById(R.id.txtAño);
+        String anio = tempVal.getText().toString();
 
-            tempVal = findViewById(R.id.txtDescripcion);
-            String descripcion = tempVal.getText().toString();
+        tempVal = findViewById(R.id.txtNumeroMotor);
+        String numeroMotor = tempVal.getText().toString();
 
-            tempVal = findViewById(R.id.txtPresentacion);
-            String presentacion = tempVal.getText().toString();
+        tempVal = findViewById(R.id.txtNumeroChasis);
+        String numeroChasis = tempVal.getText().toString();
 
-            tempVal = findViewById(R.id.txtPrecio);
-            String precio = tempVal.getText().toString();
-
-            String [] datos = {idProdcuto,codigo,producto,marca,descripcion,presentacion,precio,urlPhoto};
-            miDB.admin_productos(accion,datos);
-            mostrarMsgToast("Producto guardado con exito");
-            mostrarVistaPrincipal();
-            mostrarDatosProductos();
+        String [] datos = {idAuto,marca,modelo,anio,numeroMotor,numeroChasis,urlPhoto};
+        miDB.admin_autos(accion,datos);
+        mostrarMsgToast("Producto guardado con exito");
+        mostrarVistaPrincipal();
+        mostrarDatosProductos();
 
 
 
@@ -132,23 +129,21 @@ public class agregarProducto extends AppCompatActivity {
             accion = parametros.getString("accion");
             if (accion.equals("modificar")){
                 String[] datos = parametros.getStringArray("datos");
-                idProdcuto = datos[0];
-                tempVal = findViewById(R.id.txtCodigo);
-                tempVal.setText(datos[1]);
-                tempVal = findViewById(R.id.txtNombreProducto);
-                tempVal.setText(datos[2]);
+                idAuto = datos[0];
                 tempVal = findViewById(R.id.txtMarca);
+                tempVal.setText(datos[1]);
+                tempVal = findViewById(R.id.txtNombreModelo);
+                tempVal.setText(datos[2]);
+                tempVal = findViewById(R.id.txtAño);
                 tempVal.setText(datos[3]);
-                tempVal = findViewById(R.id.txtDescripcion);
+                tempVal = findViewById(R.id.txtNumeroMotor);
                 tempVal.setText(datos[4]);
-                tempVal = findViewById(R.id.txtPresentacion);
+                tempVal = findViewById(R.id.txtNumeroChasis);
                 tempVal.setText(datos[5]);
-                tempVal = findViewById(R.id.txtPrecio);
-                tempVal.setText(datos[6]);
 
                 urlPhoto = datos[7];
                 Bitmap img = BitmapFactory.decodeFile(urlPhoto);
-                imgFotoProducto.setImageBitmap(img);
+                imgFotoAuto.setImageBitmap(img);
             }
 
         }catch (Exception e){
@@ -195,7 +190,7 @@ public class agregarProducto extends AppCompatActivity {
         try {
             if (requestCode==1 && resultCode==RESULT_OK){
                 Bitmap imagenBitmap = BitmapFactory.decodeFile(urlPhoto);
-                imgFotoProducto.setImageBitmap(imagenBitmap);
+                imgFotoAuto.setImageBitmap(imagenBitmap);
             }
 
         }catch (Exception e){

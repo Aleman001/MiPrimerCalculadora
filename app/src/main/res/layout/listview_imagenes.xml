@@ -15,7 +15,7 @@
         app:civ_border_color="#FF000000"/>
 
     <TextView
-        android:id="@+id/lblProducto"
+        android:id="@+id/lblMarca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="90dp"
@@ -25,10 +25,10 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/lblcodigo"
+        android:id="@+id/lblNumeroMotor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lblProducto"
+        android:layout_below="@id/lblMarca"
         android:layout_marginLeft="90dp"
         android:layout_marginTop="5dp"
         android:text="2626-2222"
@@ -36,21 +36,31 @@
         android:textSize="12sp" />
 
     <TextView
-        android:id="@+id/lblprecio"
+        android:id="@+id/lblNumeroChasis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lblcodigo"
+        android:layout_below="@id/lblNumeroMotor"
         android:layout_marginLeft="90dp"
         android:textColor="@color/black"
         android:textSize="12sp" />
 
     <TextView
-        android:id="@+id/lblpresentacion"
+        android:id="@+id/lblModelo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="200dp"
         android:text="Presentacion"
+        android:textColor="#8BC34A"/>
+
+    <TextView
+        android:id="@+id/lblaño"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/lblModelo"
+        android:layout_marginLeft="250dp"
+        android:text="Año"
         android:textColor="#8BC34A"/>
 
 

@@ -10,18 +10,15 @@ import androidx.annotation.Nullable;
 
 public class DB extends SQLiteOpenHelper {
     Context miContext;
-    static String nombreDB = "db_productos";
-    static String tblProducto = "CREATE TABLE tblproductos(idProducto integer primary key autoincrement, codigo text, producto text, marca text, descripcion text, presentacion text, precio text, urlPhoto text)";
+    static String nombreDB = "db_autos";
+    static String tblAuto = "CREATE TABLE tblautos(idAuto integer primary key autoincrement, marca text, modelo text, anio text, numeroMotor text, numeroChasis text, urlPhoto text)";
 
 
-            /*this.idProducto = idProducto;
-        this.codigo = codigo;
-        this.producto = producto;
-        this.marca = marca;
-        this.descripcion = descripcion;
-        this.presentacion = presentacion;
-        this.precio = precio;
-        this.urlImg = urlImg*/
+            /*i.   Marca
+            ii.   Modelo
+            iii.   Año
+            iv.   Numero de Motor
+            v.   Numero de Chasis */
 
     public DB(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, nombreDB, factory, version);
@@ -29,7 +26,7 @@ public class DB extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(tblProducto);
+        db.execSQL(tblAuto);
 
     }
 
@@ -38,41 +35,41 @@ public class DB extends SQLiteOpenHelper {
 
     }
 
-    public Cursor admin_productos (String accion, String [] datos ) {
-           Cursor datosCursor = null;
-           SQLiteDatabase sqLiteDatabaseW = getWritableDatabase();
-           SQLiteDatabase sqLiteDataBaseR =getReadableDatabase();
-           switch (accion){
-               case "consultar":
-                   datosCursor = sqLiteDataBaseR.rawQuery("select * from tblproductos order by producto", null);
-                   break;
+    public Cursor admin_autos (String accion, String [] datos ) {
+        Cursor datosCursor = null;
+        SQLiteDatabase sqLiteDatabaseW = getWritableDatabase();
+        SQLiteDatabase sqLiteDataBaseR =getReadableDatabase();
+        switch (accion){
+            case "consultar":
+                datosCursor = sqLiteDataBaseR.rawQuery("select * from tblautos order by marca", null);
+                break;
 
-               case "nuevo":
-                   sqLiteDatabaseW.execSQL("INSERT INTO tblproductos(codigo, producto, marca, descripcion, presentacion, precio, urlPhoto) VALUES ('"+datos[1]+"', '"+datos[2]+"', '"+datos[3]+"', '"+datos[4]+"', " +
-                           "'"+datos[5]+"', '"+datos[6]+"', '"+datos[7]+"')");
-                   break;
+            case "nuevo":
+                sqLiteDatabaseW.execSQL("INSERT INTO tblautos(marca, modelo, anio, numeroMotor, numeroChasis, urlPhoto) VALUES ('"+datos[1]+"', '"+datos[2]+"', '"+datos[3]+"', '"+datos[4]+"', " +
+                        "'"+datos[5]+"', '"+datos[6]+"')");
+                break;
 
-               case "modificar":
-                   try{
-                       sqLiteDatabaseW.execSQL("UPDATE tblproductos SET codigo ='"+datos[1]+"', producto='"+datos[2]+"', marca = '"+datos[3]+"', descripcion = '"+datos[4]+"', " +
-                               "presentacion = '"+datos[5]+"', precio = '"+datos[6]+"', urlPhoto = '"+datos[7]+"' WHERE idProducto = '"+datos[0]+"' ");
+            case "modificar":
+                try{
+                    sqLiteDatabaseW.execSQL("UPDATE tblautos SET marca ='"+datos[1]+"', modelo='"+datos[2]+"', anio = '"+datos[3]+"', numeroMotor = '"+datos[4]+"', " +
+                            "numeroChasis = '"+datos[5]+"', urlPhoto = '"+datos[6]+"' WHERE idAuto = '"+datos[0]+"' ");
 
-                   }catch (Exception e){
-                       Toast.makeText(miContext.getApplicationContext(),e.getMessage(),Toast.LENGTH_LONG).show();
-
-
-                   }
-
-                   break;
-
-               case "eliminar":
-                   sqLiteDatabaseW.execSQL("DELETE FROM tblproductos WHERE idProducto = '"+datos[0]+"'");
-                   break;
-
-           }
+                }catch (Exception e){
+                    Toast.makeText(miContext.getApplicationContext(),e.getMessage(),Toast.LENGTH_LONG).show();
 
 
-           return datosCursor;
+                }
+
+                break;
+
+            case "eliminar":
+                sqLiteDatabaseW.execSQL("DELETE FROM tblautos WHERE idAuto = '"+datos[0]+"'");
+                break;
+
+        }
+
+
+        return datosCursor;
 
 
 

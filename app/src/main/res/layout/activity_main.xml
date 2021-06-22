@@ -8,18 +8,18 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/txtBuscarProductos"
+        android:id="@+id/txtBuscarAutos"
         android:hint="Buscar Productos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <ListView
-        android:id="@+id/ltsproducotos"
+        android:id="@+id/ltsautos"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="40dp"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnAgregarProductos"
+        android:id="@+id/btnAgregarAutos"
         android:src="@android:drawable/ic_input_add"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"

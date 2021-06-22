@@ -25,69 +25,62 @@
                 android:layout_marginTop="10dp"
                 app:cardCornerRadius="150dp">
                 <ImageButton
-                    android:id="@+id/imgFotoProducto"
+                    android:id="@+id/imgFotoAuto"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"/>
             </androidx.cardview.widget.CardView>
 
             <EditText
-                android:id="@+id/txtCodigo"
+                android:id="@+id/txtMarca"
                 android:layout_below="@id/cvrPhoto"
                 android:layout_margin="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Codigo"/>
+                android:hint="Marca"/>
             <EditText
-                android:id="@+id/txtNombreProducto"
-                android:layout_below="@id/txtCodigo"
+                android:id="@+id/txtNombreModelo"
+                android:layout_below="@id/txtMarca"
                 android:layout_margin="10dp"
-                android:hint="Producto"
+                android:hint="Nombre de Modelo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
             <EditText
-                android:id="@+id/txtMarca"
-                android:layout_below="@id/txtNombreProducto"
+                android:id="@+id/txtAño"
+                android:layout_below="@id/txtNombreModelo"
                 android:layout_margin="10dp"
-                android:hint="Marca"
+                android:hint="Año"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <EditText
-                android:id="@+id/txtPresentacion"
+                android:id="@+id/txtNumeroMotor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Presentacion"
+                android:hint="Numero de Motor"
                 android:layout_margin="10dp"
-                android:layout_below="@+id/txtMarca"/>
+                android:layout_below="@+id/txtAño"/>
 
             <EditText
-                android:id="@+id/txtDescripcion"
+                android:id="@+id/txtNumeroChasis"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/txtPrecio"
+                android:layout_below="@id/txtNumeroMotor"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
-                android:hint="Descripcion" />
+                android:hint="Numero de Chasis" />
 
-            <EditText
-                android:id="@+id/txtPrecio"
-                android:layout_below="@id/btnGuardarProducto"
-                android:layout_margin="10dp"
-                android:hint="Precio"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
             <Button
-                android:id="@+id/btnGuardarProducto"
-                android:layout_below="@id/txtPresentacion"
+                android:id="@+id/btnGuardarAuto"
+                android:layout_below="@id/txtNumeroChasis"
                 android:layout_margin="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Guardar Producto"
+                android:text="Guardar Vehiculo"
                 android:layout_marginLeft="100dp"
                 android:layout_marginRight="100dp"/>
 
